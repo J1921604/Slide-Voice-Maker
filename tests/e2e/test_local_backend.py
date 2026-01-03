@@ -168,8 +168,8 @@ def test_local_backend_generates_and_downloads_webm(tmp_path: Path) -> None:
 
         # サーバーが書き込んだ output 側にもファイルがある
         generated = output_dir / "sample.webm"
-        assert generated.exists(), "output/にWebMが生成されていません"
-        assert generated.stat().st_size > 0, "output/のWebMが空です"
+        assert generated.exists(), "output/にWebM/MP4が生成されていません"
+        assert generated.stat().st_size > 0, "output/のWebM/MP4が空です"
 
         # ダウンロードAPI
         r = requests.get(f"{base_url}/api/download", params={"name": "sample.webm"}, timeout=30)

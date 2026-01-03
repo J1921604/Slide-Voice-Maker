@@ -1,6 +1,6 @@
 # Slide Voice Maker
 
-PDFスライドと原稿CSVから、AI音声ナレーション付き動画（WebM）を自動生成するツールです。
+PDFスライドと原稿CSVから、AI音声ナレーション付き動画（WebM/MP4）を自動生成するツールです。
 
 **バージョン**: 1.0.0  
 **日付**: 2026-01-05  
@@ -27,7 +27,7 @@ flowchart LR
 | **解像度選択** | 720p/1080p/1440pから選択（画像解像度） |
 | **再生速度** | 0.5x〜2.0xで音声再生速度を調整 |
 | **字幕ON/OFF** | 動画に字幕を埋め込むかどうかを選択 |
-| **画像・音声生成** | Coqui TTS（XTTS v2）でAI音声を生成、output/tempに画像・音声を保存 |
+| **画像・音声生成** | Edge TTSでAI音声を生成、output/tempに画像・音声を保存 |
 | **動画生成** | output/tempから動画WebM/MP4を生成（PDFと同名で保存） |
 | **原稿CSV出力** | 編集した原稿をCSVでダウンロード |
 | **動画出力** | outputフォルダから選択したWebM/MP4をダウンロード |
@@ -144,8 +144,6 @@ index,script
 
 | 変数名 | デフォルト | 説明 |
 |--------|-----------|------|
-| `USE_COQUI_TTS` | `1` | Coqui TTS使用（`0`で音声生成無効） |
-| `COQUI_SPEAKER_WAV` | `src/voice/models/samples/sample.wav` | Coqui TTSの話者サンプル音声パス |
 | `USE_VP8` | `1` | VP8使用（高速）。`0`でVP9（高品質）。 |
 | `VP9_CPU_USED` | `8` | エンコード速度（0-8、大きいほど高速） |
 | `VP9_CRF` | `40` | 品質（大きいほど低品質・高速） |
@@ -209,13 +207,7 @@ pip install --upgrade imageio-ffmpeg
 
 ### 音声が生成されない
 
-Coqui TTSの初回実行時はモデルダウンロードに30-60秒かかります。音声サンプルファイル（`src/voice/models/samples/sample.wav`）が必要です。
-
-自分の声で音声生成する場合、`src/voice/create_voice.py`を実行して音声サンプルを録音してください。
-
-```bash
-py -3.10 src\voice\create_voice.py
-```
+Edge TTSはインターネット接続が必要です。ネットワークを確認してください。
 
 ### バックエンドが検出されない
 
@@ -260,8 +252,7 @@ MIT License
 
 ## 🙏 クレジット
 
-- [Coqui TTS](https://github.com/coqui-ai/TTS) - オープンソース音声合成（XTTS v2モデル使用）
+- [Edge TTS](https://github.com/rany2/edge-tts) - Microsoft Edge音声合成
 - [PyMuPDF](https://pymupdf.readthedocs.io/) - PDF処理
-- [MoviePy](https://zulko.github.io/moviepy/) - 動画編集
+- [MoviePy](https://zulko.github.io/moviepy/) - 動画編集（フォールバック用）
 - [FastAPI](https://fastapi.tiangolo.com/) - Webフレームワーク
-- [PDF.js](https://mozilla.github.io/pdf.js/) - クライアント側PDF レンダリング

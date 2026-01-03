@@ -60,7 +60,7 @@ flowchart TB
         SERVER[src/server.py]
         MAIN[src/main.py]
         PROC[src/processor.py]
-        TTS[Coqui TTS<br/>XTTS v2]
+        TTS[Edge TTS]
     end
 
     subgraph Web UI
@@ -202,35 +202,23 @@ erDiagram
 | 項目 | 技術 |
 |------|------|
 | 言語 | Python 3.10.11 |
-| 音声合成 | Coqui TTS (XTTS v2) - 自分の声でクローン音声生成 |
+| 音声合成 | Edge TTS |
 | 動画編集 | MoviePy < 2.0 |
 | PDF処理 | PyMuPDF (fitz) |
-| 動画エンコード | FFmpeg (VP8/VP9/H.264) |
+| 動画エンコード | FFmpeg (VP8/VP9) |
 | Web UI | React 18 + Tailwind CSS + PDF.js |
 | サーバー | FastAPI + Uvicorn |
 
 ## 依存関係
 
 ```
-# 音声合成
-TTS>=0.22.0                 # Coqui TTS (XTTS v2)
-torch>=2.0.0                # PyTorch (Coqui TTS依存)
-torchaudio>=2.0.0           # torchaudio (Coqui TTS依存)
-soundfile>=0.12.1           # TorchCodecバイパス用
-cutlet>=0.4.0               # 日本語ローマ字化
-unidic-lite>=1.0.8          # MeCab辞書（fugashi依存）
+edge-tts
+moviepy<2.0
+pymupdf
+pandas
+imageio-ffmpeg
+Pillow
+requests
+pytest
 
-# 動画編集
-moviepy<2.0                 # 動画生成
-imageio-ffmpeg>=0.4.9       # FFmpeg自動ダウンロード
-pymupdf>=1.23.0             # PDF処理
-Pillow>=10.0.0              # 画像処理
-
-# Webサーバー
-fastapi>=0.104.0            # REST API
-uvicorn[standard]>=0.24.0   # ASGIサーバー
-
-# ユーティリティ
-requests>=2.31.0            # HTTP通信
-pytest>=7.4.0               # テスト
 ```

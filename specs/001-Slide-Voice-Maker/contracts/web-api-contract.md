@@ -79,7 +79,7 @@ const exportVideo = async () => { ... }
 1. `getResolutionDimensions()` で解像度取得
 2. canvasサイズを設定
 3. MediaRecorderで録画
-4. WebMファイルとしてダウンロード
+4. WebM/MP4ファイルとしてダウンロード
 
 ## UIコンポーネント
 

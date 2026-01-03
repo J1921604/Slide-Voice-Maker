@@ -16,7 +16,7 @@
 
 加えて、運用上の要件として以下も満たす:
 
-- PDFアップロードでinput/に保存、原稿CSV入力でinput/原稿.csv上書き、音声生成でEdge TTS実行、output/にwebm出力
+- PDFアップロードでinput/に保存、原稿CSV入力でinput/原稿.csv上書き、音声生成でEdge TTS実行、output/にWebM/MP4出力
 - **Web UIはサーバー連携のみ（静的配信はGitHub Pages、APIはローカル）**
 - **ホーム画面ヘッダーでPDFを常時アップロード**
 - **PDFアップロード後の画面では原稿CSV入力を維持**（文字化け対処のため）
@@ -26,7 +26,7 @@
 ## 技術コンテキスト
 
 **言語/バージョン**: Python 3.10.11
-**主要依存関係**: TTS (Coqui XTTS v2), moviepy<2.0, pymupdf, imageio-ffmpeg, fastapi, uvicorn, torch, torchaudio, soundfile, cutlet, unidic-lite
+**主要依存関係**: edge-tts, moviepy<2.0, pymupdf, pandas, imageio-ffmpeg, fastapi, uvicorn
 **ストレージ**: ファイルシステム（output/, output/temp/）
 **テスト**: 手動テスト + E2Eスクリプト
 **ターゲットプラットフォーム**: Windows

@@ -19,7 +19,7 @@ async def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     parser = argparse.ArgumentParser(
-        description="Generate narrated videos (webm) from PDF pages + narration script CSV.",
+        description="Generate narrated videos (WebM/MP4) from PDF pages + narration script CSV.",
     )
     parser.add_argument(
         "--input",
@@ -29,7 +29,7 @@ async def main():
     parser.add_argument(
         "--output",
         default=os.path.join(base_dir, "output"),
-        help="Output directory for generated webm files.",
+        help="Output directory for generated WebM/MP4 files.",
     )
     parser.add_argument(
         "--script",

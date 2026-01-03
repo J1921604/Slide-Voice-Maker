@@ -116,7 +116,7 @@ class _SlideItem:
 
 | 属性 | 型 | 説明 | 制約 |
 |------|-----|------|------|
-| filename | string | 出力ファイル名 | {PDF名}.webm |
+| filename | string | 出力ファイル名 | {PDF名}.webm or {PDF名}.mp4 |
 | resolution | Resolution | 解像度設定 | 720p/1080p/1440p |
 | codec | string | 動画コーデック | VP8 または VP9 |
 | duration | float | 動画長（秒） | 全スライドの合計 |

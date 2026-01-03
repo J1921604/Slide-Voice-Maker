@@ -17,36 +17,6 @@ if not hasattr(Image, 'ANTIALIAS'):
 import imageio_ffmpeg
 
 
-def _patch_torchaudio_load() -> None:
-    """torchaudio.load を soundfile ベースに差し替えて TorchCodec 依存を回避する。
-
-    TorchCodec は Windows で FFmpeg の shared DLL を要求し、環境が整っていないと
-    「Could not load libtorchcodec」などのエラーを誘発する。Coqui TTS 内部で
-    torchaudio.load が呼ばれるため、事前に soundfile 実装へ置き換えておく。
-    """
-
-    try:
-        import soundfile as sf
-        import torchaudio
-        import torch
-    except ImportError as e:  # pragma: no cover - 実行環境の不足を明示
-        raise RuntimeError(
-            "torchaudio/soundfile の読み込みに失敗しました。requirements.txt を再インストールしてください。"
-        ) from e
-
-    def patched_load(filepath, *args, **kwargs):
-        audio_data, sample_rate = sf.read(filepath)
-        if audio_data.ndim == 1:
-            audio_tensor = torch.from_numpy(audio_data).unsqueeze(0)
-        else:
-            audio_tensor = torch.from_numpy(audio_data.T)
-        return audio_tensor.float(), sample_rate
-
-    # 既存の load を置換（元の関数は保持しない。TorchCodec を経由しないことを優先）
-    torchaudio.load = patched_load
-    print("TorchCodecバイパス: torchaudio.load を soundfile ベースに差し替えました")
-
-
 def _read_script_csv(script_path: str) -> dict[int, str]:
     """原稿CSV（index,script）を辞書化して返す。
 
@@ -646,58 +616,13 @@ def _embed_subtitles(input_path: str, subtitle_path: str, output_path: str) -> N
         raise RuntimeError(f"FFmpeg subtitle embedding failed (code={proc.returncode}): {err}")
 
 
-async def generate_voice(text, output_path, voice="ja-JP-NanamiNeural", use_coqui=True):
-    """Coqui TTS で音声を生成する（Edge TTS へのフォールバックは無効化）。
+async def generate_voice(text, output_path, voice="ja-JP-NanamiNeural"):
+    """Edge TTSを使って音声を生成する"""
+    # edge_tts は import が重い/環境差があるため遅延import
+    import edge_tts
 
-    Args:
-        text: 音声化するテキスト
-        output_path: 出力ファイルパス
-        voice: 互換性のため残すが、現在は未使用
-        use_coqui: 環境変数 USE_COQUI_TTS と掛け合わせて制御
-    """
-
-    use_coqui_env = os.environ.get("USE_COQUI_TTS", "1") == "1"
-    if not (use_coqui and use_coqui_env):
-        raise RuntimeError(
-            "Coqui TTS が無効化されています。USE_COQUI_TTS=1 を設定し、Coquiモデルを利用してください。"
-        )
-
-    # 話者サンプル WAV（デフォルトは自録りファイル）
-    repo_root = Path(__file__).resolve().parent
-    default_sample = repo_root / "voice" / "models" / "samples" / "sample.wav"
-    speaker_wav = Path(os.environ.get("COQUI_SPEAKER_WAV", default_sample))
-
-    if not speaker_wav.exists():
-        raise FileNotFoundError(
-            f"話者サンプルが見つかりません: {speaker_wav}\n"
-            "src/voice/create_voice.py を実行し、自分の声を録音してください。"
-        )
-
-    try:
-        # キャッシュされたTTSモデルを取得（初回のみロード）
-        tts = _get_tts_model()
-        
-        print(f"Generating voice with Coqui TTS: {text[:50]}...")
-        Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-        tts.tts_to_file(
-            text=text,
-            speaker_wav=str(speaker_wav),
-            language="ja",
-            file_path=output_path,
-        )
-        print(f"Voice generated: {output_path}")
-    except OSError as e:
-        # TorchCodec が見つからない場合に明示的なメッセージを出す
-        msg = str(e)
-        if "torchcodec" in msg.lower():
-            raise RuntimeError(
-                "TorchCodec の読み込みに失敗しました。FFmpeg full-shared 版を導入し、"
-                "docs/ffmpegインストール手順.md の手順で PATH を設定してください。"
-            ) from e
-        raise
-    except Exception:
-        # 例外を握りつぶさず、そのまま上位へ投げる（Edge TTS にはフォールバックしない）
-        raise
+    communicate = edge_tts.Communicate(text, voice)
+    await communicate.save(output_path)
 
 
 async def generate_single_audio(
@@ -743,47 +668,6 @@ def _select_temp_dir(output_dir: str, output_name: str, temp_subdir: Optional[st
         return cand2
 
     return base
-
-
-# Coqui TTSのグローバルキャッシュ（初回初期化のみ実行）
-_tts_cache = None
-_tts_cache_lock = None
-
-
-def _get_tts_model():
-    """Coqui TTSモデルのシングルトンを取得する。初回のみモデルロードを行う。"""
-    global _tts_cache, _tts_cache_lock
-    
-    if _tts_cache is not None:
-        return _tts_cache
-    
-    # スレッドセーフな初期化（asyncio + threading混在環境）
-    import threading
-    if _tts_cache_lock is None:
-        _tts_cache_lock = threading.Lock()
-    
-    with _tts_cache_lock:
-        # ダブルチェックロック
-        if _tts_cache is not None:
-            return _tts_cache
-        
-        # TorchCodec 依存を排除するため、先に torchaudio をパッチ
-        _patch_torchaudio_load()
-        
-        try:
-            from TTS.api import TTS
-            import torch
-        except Exception as e:
-            raise RuntimeError("Coqui TTS の読み込みに失敗しました。requirements を再インストールしてください。") from e
-        
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        print(f"Coqui TTS モデルを初期化中... (device: {device})")
-        print("初回実行時はモデルダウンロードに30-60秒かかります。")
-        
-        _tts_cache = TTS(model_name="tts_models/multilingual/multi-dataset/xtts_v2").to(device)
-        print("Coqui TTS モデル初期化完了")
-        
-        return _tts_cache
 
 
 def _parse_slide_index_from_stem(stem: str) -> Optional[int]:

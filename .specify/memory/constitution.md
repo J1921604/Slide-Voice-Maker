@@ -145,7 +145,7 @@ flowchart TD
 
 **必須のE2E**:
 
-- CLI: `py -3.10 src\main.py` を起点に、PDF→WebM生成が成功すること
+-- CLI: `py -3.10 src\main.py` を起点に、PDF→WebM/MP4生成が成功すること
 - Web: `index.html` で PDF/原稿CSV→画像・音声生成→動画生成→動画出力が **空ファイルにならない**こと
 
 ### レビュー要件

@@ -5,7 +5,7 @@
 
 ## 概要
 
-Slide Voice MakerはPDFスライドと原稿CSVからAI音声ナレーション付き動画（WebM）を自動生成するツールです。
+Slide Voice MakerはPDFスライドと原稿CSVからAI音声ナレーション付き動画（WebM/MP4）を自動生成するツールです。
 
 ## 動作環境
 
@@ -104,7 +104,7 @@ index,script
 
 ### 動画ファイル
 
-- `output/{PDFファイル名}.webm`
+- `output/{PDFファイル名}.webm` または `output/{PDFファイル名}.mp4`
 - VP8/VP9コーデック
 - 選択した解像度で出力
 

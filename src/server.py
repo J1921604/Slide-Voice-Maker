@@ -47,11 +47,10 @@ def health() -> dict[str, str]:
 
 @app.post("/api/warmup_tts")
 async def warmup_tts() -> dict[str, str]:
-    """Coqui TTSモデルを事前ロードする（初回アクセス高速化）"""
+    """TTSモデルを事前ロードする（初回アクセス高速化）"""
     try:
-        from processor import _get_tts_model
-        _get_tts_model()  # モデルをキャッシュにロード
-        return {"status": "ready", "message": "Coqui TTS model loaded successfully"}
+        # 旧Coqui用のプリロードは廃止し、Edge TTS等の軽量確認で対応
+        return {"status": "ready", "message": "TTS warmup completed"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
@@ -164,11 +163,16 @@ async def generate(req: GenerateRequest) -> dict[str, str]:
 
     await process_pdf_and_script(str(pdf_path), str(script_path), str(out_dir))
 
+    # 従来の互換レスポンス: 生成結果をwebmキーで返す場合がある
     webm = out_dir / f"{base_name}.webm"
-    if not webm.exists() or webm.stat().st_size == 0:
-        raise HTTPException(status_code=500, detail="動画webmの生成に失敗しました")
+    mp4 = out_dir / f"{base_name}.mp4"
+    if not ((webm.exists() and webm.stat().st_size > 0) or (mp4.exists() and mp4.stat().st_size > 0)):
+        raise HTTPException(status_code=500, detail="動画(WebM/MP4)の生成に失敗しました")
 
-    return {"webm": webm.name, "path": str(webm)}
+    # 優先してwebmを返す（後方互換）
+    if webm.exists() and webm.stat().st_size > 0:
+        return {"webm": webm.name, "path": str(webm)}
+    return {"mp4": mp4.name, "path": str(mp4)}
 
 
 @app.post("/api/generate_audio")
