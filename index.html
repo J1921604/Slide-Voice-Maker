@@ -94,7 +94,7 @@
                 return await res.json();
             } catch (err) {
                 if (err.name === 'AbortError') {
-                    throw new Error(`タイムアウト（${timeoutMs/1000}秒超過）: サーバー応答がありませんでした。Coqui TTSの初回実行時は時間がかかる場合があります。`);
+                    throw new Error(`タイムアウト（${timeoutMs/1000}秒超過）: サーバー応答がありませんでした。音声合成モデルの初回ロード時は時間がかかる場合があります。`);
                 }
                 throw err;
             } finally {
@@ -278,7 +278,7 @@
                 }
             }, [playbackRate, activeSlideIndex]);
 
-            // ローカルバックエンド検出 + Coqui TTSウォームアップ
+            // ローカルバックエンド検出 + TTSウォームアップ
             useEffect(() => {
                 let cancelled = false;
                 const check = async () => {
@@ -286,9 +286,9 @@
                         const j = await fetchJson('/api/health', {}, 1200);
                         if (!cancelled && j && j.status === 'ok') {
                             setLocalBackendAvailable(true);
-                            // Coqui TTSモデルを事前ロード（バックグラウンド）
+                            // TTSモデルを事前ロード（バックグラウンド）
                             fetchJson('/api/warmup_tts', { method: 'POST' }, 120000).catch(() => {
-                                console.warn('Coqui TTS warmup failed, will load on first use');
+                                console.warn('TTS warmup failed, will load on first use');
                             });
                         }
                     } catch (_) {

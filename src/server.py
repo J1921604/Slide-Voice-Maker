@@ -49,7 +49,6 @@ def health() -> dict[str, str]:
 async def warmup_tts() -> dict[str, str]:
     """TTSモデルを事前ロードする（初回アクセス高速化）"""
     try:
-        # 旧Coqui用のプリロードは廃止し、Edge TTS等の軽量確認で対応
         return {"status": "ready", "message": "TTS warmup completed"}
     except Exception as e:
         return {"status": "error", "message": str(e)}

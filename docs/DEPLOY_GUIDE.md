@@ -43,16 +43,14 @@ cp README.md dist/README.md
 
 ### 前提条件
 - Python 3.10.11インストール済み
-- Coqui TTS用の音声サンプル（`src/voice/models/samples/sample.wav`）が必要
-  - 録音方法: `py -3.10 src\voice\create_voice.py`
-  - 10-30秒の自分の声を録音
+- 音声サンプル（任意）: 使用するTTSに応じて、サンプル音声が必要な場合があります。詳細は利用するTTSのドキュメントを参照してください。
 
 ### ワンクリック（推奨）
 ```powershell
 powershell -ExecutionPolicy Bypass -File start.ps1
 ```
 - ポート8000を解放し、仮想環境を自動作成/起動、依存パッケージをインストール、FastAPIを起動してブラウザで `index.html` を開きます。
-- **初回起動時**: Coqui TTSモデルダウンロードに30-60秒かかります
+- **初回起動時**: 音声合成モデルの初回ロードに時間がかかる場合があります（数秒〜数十秒）。
 
 ### 手動起動
 ```powershell
@@ -72,8 +70,6 @@ start http://127.0.0.1:8000/index.html
 ## 環境変数（性能/画質チューニング）
 | 変数 | 既定値 | 説明 |
 |---|---|---|
-| USE_COQUI_TTS | 1 | Coqui TTS使用（`0`で無効化） |
-| COQUI_SPEAKER_WAV | `src/voice/models/samples/sample.wav` | 音声サンプルパス |
 | USE_VP8 | 1 | `1`でVP8高速、`0`でVP9高品質 |
 | VP9_CPU_USED | 8 | VP9速度パラメータ (0-8) |
 | VP9_CRF | 40 | VP9品質（大きいほど軽量） |
@@ -86,8 +82,8 @@ start http://127.0.0.1:8000/index.html
 
 ## よくある質問
 - **Pages公開後にバックエンドが見つからない**: Pagesは静的配信のみです。ローカルでFastAPIを起動してください。
-- **音声生成が「signal is aborted without reason」で失敗**: Coqui TTSの初回実行時はモデルダウンロードに30-60秒かかります。タイムアウトは300秒に設定済みです。
-- **音声サンプルが見つからない**: `py -3.10 src\voice\create_voice.py` を実行して自分の声を録音してください。
+- **音声生成が「signal is aborted without reason」で失敗**: 音声合成モデルの初回ロードに時間がかかる場合があります。タイムアウトやモデルの準備状況を確認してください。
+- **音声サンプルが見つからない**: 使用するTTSの要件に従ってサンプル音声を準備してください（必要に応じてTTSのドキュメントを参照）。
 - **動画生成が遅い**: `USE_VP8=1`, `OUTPUT_MAX_WIDTH` を下げる, `OUTPUT_FPS` を下げると高速化します。
 - **字幕が切り替わらない**: 句読点でチャンク分割し、最小セグメント幅0.15秒を確保するASSを生成しています。CSVの句読点を確認してください。FPSを30fpsにすることで改善します。
 
