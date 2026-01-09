@@ -1,0 +1,12 @@
+edge-tts
+moviepy<2.0
+pymupdf
+pandas
+imageio-ffmpeg
+fastapi
+uvicorn
+python-multipart
+Pillow
+requests
+truststore
+pytest
