@@ -1,0 +1,445 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.3333333333333,3679.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Presentations</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>System.Reflection</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="76">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Presentations.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="842,3614.6666666666665" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.ja.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="URLからファイルをダウンロード" sap:VirtualizedContainerService.HintSize="800,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="ファイルが存在する" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:FileExistsX DisplayName="ファイルの存在を確認" Exists="[ファイルが存在する]" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="data.xlsx">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:FileExistsX>
+      <If Condition="[ファイルが存在する]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,705.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="334,92.66666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="ファイルが存在します。" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,341.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="[UiPath.Activities.System.FileOperations.FileConflictBehavior.Replace]" DisplayName="ファイルを URL からダウンロード" FileName="data.xlsx" sap:VirtualizedContainerService.HintSize="334,121.33333333333333" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="https://www.expense-demo.com/data.xlsx" />
+            <WriteLine DisplayName="1 行を書き込み" sap:VirtualizedContainerService.HintSize="334,92.66666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="ファイルを URL からダウンロードしました。" />
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Excelとブラウザ操作" sap:VirtualizedContainerService.HintSize="800,3402.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="738,3292" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="704,3204.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="662,3117.3333333333335" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="data.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="628,2836.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="ブラウザーを使用 Edge: UiPath Demo" sap:VirtualizedContainerService.HintSize="586,2749.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="6ab40b3d-70c3-4366-a9a9-198d6e5c0d45" Version="V2" WindowResize="Maximize">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="552,2530" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="コード" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '経費を登録する'" sap:VirtualizedContainerService.HintSize="510,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ab40b3d-70c3-4366-a9a9-198d6e5c0d45" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/" DesignTimeRectangle="223, 399, 1520, 34" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'経費を登録する'" FullSelectorArgument="&lt;webctrl aaname='経費を登録する' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='経費を登録する' tag='A' type='' class='btn btn-primary btn-block menu-link' check:innerText='経費を登録する' /&gt;" Guid="76cc3ee9-c6ae-4e41-972e-248507ae0126" InformativeScreenshot="3f7cfba537ed1f4335dec19eb0783802.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="208, 358, 1520, 26" ElementType="Text" FriendlyName="'経費登録'" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='' aaname='経費登録' check:innerText='経費登録' /&gt;" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <ueab:ExcelForEachRowX DisplayName="繰り返し (Excel の各行)" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="510,2238" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveAfterEachRow="False">
+                                <ueab:ExcelForEachRowX.Body>
+                                  <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                                    <ActivityAction.Argument1>
+                                      <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                                    </ActivityAction.Argument1>
+                                    <ActivityAction.Argument2>
+                                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                                    </ActivityAction.Argument2>
+                                    <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="476,2040" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '明細を登録する'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ab40b3d-70c3-4366-a9a9-198d6e5c0d45" Version="V3">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/0b9550357a4341188782be4e0ffc1fa9" DesignTimeRectangle="55, 231, 124, 34" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'明細を登録する'" FullSelectorArgument="&lt;webctrl id='newTx' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='newTx' tag='A' type='' class='btn btn-primary menu-link' aaname='明細を登録する' check:innerText='明細を登録する' /&gt;" Guid="46c4749c-c41b-421a-8147-2c851eff5f31" InformativeScreenshot="258528bb3f692912df7577e86b494880.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="45, 141, 1846, 40" ElementType="Text" FriendlyName="'経費一覧'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' aaname='経費一覧' check:innerText='経費一覧' /&gt;" SearchSteps="FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NClick.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NClick>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="文字を入力 'タイトル*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[CurrentRow.ByField(&quot;タイトル&quot;)]">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/d9b7ec0fe0f34a9eae088f30dbc32ce7/new" DesignTimeRectangle="375, 410, 882, 51" ElementType="InputBox" FriendlyName="'INPUT  ledger_ledger_na…'" FullSelectorArgument="&lt;webctrl id='ledger_ledger_name' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ledger_ledger_name' tag='INPUT' type='text' aaname='タイトル*' /&gt;" Guid="b2c54fef-a362-4567-8f59-86d1e628f457" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA3YAAAA3CAYAAABAQdjZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK4SURBVHhe7dzBTupQGIXR+/7PJlNG6MQBEKIiKhBUzs1uaFMSnUr/ZK1kDwrtA3w5hX8NAACA0oQdAABAcT+G3Wq1avP5vM1ms3Z3d2dmZmZmZmY3XNosjZZW+8lV2B2Px+7mxWLRPfD09NSen5/by8uLmZmZmZmZ3WBpsrTZer3uWi3NlnYbuwq73PD4+Ng9vNvt2vv7e/v4+Oi23+/NzMzMzMzsj5ceS5ul0dJqaba029gQdjmhS/29vr62w+HQTqdT+/r66vb9/W1mZmZmZmY3WrosjZbQS7P1b1n2hrBL8W02m+5ILw+ez+fLNwAAANxaGi2Bl2ZLu41P7Yawy4/xcryXGwEAAJimNFvaLQ3XG8Iu/7SS8nNSBwAAMF1ptrRbGq53FXZ5Z1PYAQAATFeaLe32a9h9fn5ergAAAJiqtJuwAwAAKEzYAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADFCTsAAIDihB0AAEBxwg4AAKA4YQcAAFCcsAMAAChO2AEAABQn7AAAAIoTdgAAAMUJOwAAgOKEHQAAQHHCDgAAoDhhBwAAUJywAwAAKE7YAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADF/Rp2s9msnU6nyxUAAABTlXZLw/WGsJvP52273bbz+Xz5BAAAgKlJs6Xd0nC9IexWq1W7v78XdgAAABOWZku7peF6Q9hFim+5XF6uAAAAmJo02/i0Lq7C7ng8djc8PDy0t7c3p3cAAAATkDbb7XZdq6XZ0m5jV2HXy5Febs6P8fJPK2ZmZmZmZna7pc3SaOPXL8d+DDsAAADqEHYAAACltfYfwSQtRkq+UrAAAAAASUVORK5CYII=" InformativeScreenshot="067219ef9de5fd112ec85e8684ac67ec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="44, 410, 309, 38" ElementType="Text" FriendlyName="'タイトル*'" FullSelectorArgument="&lt;webctrl aaname='タイトル*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='タイトル*' tag='LABEL' type='' check:text='タイトル*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAqCAYAAADI1CxwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUCSURBVHhe7dvPZyN9AMfx53/KKYcSlvIccmouGx469hJlQ9kojR6eWiqHih5iDytL9bJRanpYKdWHJaWyh5plmfJIKTksYRl6GMJnvzP5TuZHk+lMmjZ5vs/nxffQaTKZlnn7znwnf4CISGGMHBEpjZEjIqUxckSkNEaOiJTGyBGR0hg5IlIaI0dESmPkiEhpjBwRKY2RIyKlMXJEpDRGjoiUxsgRkdIYOSJSGiNHREpj5IhIaYwc0TIa9tDa0FA9bMPs23LjJAbqmQwy7qiLnyiKkSNKyrpAdWUVxb+KKP19gb7c/Bx6nzUZLjHWGjCmdu6ZI3dd94/jIP3eB6flmd87L4wcUULWWWV8wuc/mnLr/NkiLAUvLJkCmjfyFxPNL3LjIIlRPh2MNqaOnI3OfhnNb+H35z/J/9ddG7vbLfSGox9fAiNHlMTQRDPvxSTBeKtDnuap2NcNFFe8/WRFbB6bLy5X5OzvDeTd12dRfN9G/2r0/vKJCeOwhJzcV/nLLP+d2TByRAn0T/wAJBp7HTGnSWdwWQvM4EQkPhgJ9hGMXA2dtB8aMJ+ZnNjPVQPaONTRkUPl2ITFmRzREunrKHsn7VoT5pQT1BaR8k7mrAhUYkMLxicN2XEIxAzucy9hJIORG7139U0VR197GKQM3rwi57JM6O+Lgb8pg9xGE92f8vcviJEjinMvIrLmnagFNL5PL4fxITs+oavnltz6COce1Wv/fZmVIuqXaS7lgpHLYfXPwL7Ez9peC0bs6qyPkSP6vxn2oW/60Sh4N88nCt6zK0N/7GT+9TAC7kgTEtfDe3LWbQdHO9r4/pczcht1tH/Eh3d+l6tNlF75n+2M7Ir3fyxg95SXq0SLZxlovgkEznlkxFl8eL0KbacB/SpyOfijKW+4i7Hemvp4id3vPghQaMwhcmNWD52P/s1+Z7ixu5kcu/5Jafy6+rXc+EjkrPN6KFrhhQcd5j+j9zsLD+ZxZXwspZPnfAAnjJEjihh8C89ERoGLPLvmjixWN2tofTWgb/tBrJyFI2LfmWgf11AOXUqK8UpD7dgQM58ZLwldMZHzRC8dVyrQJ1zCGgfefhJGLrDinNu+kKvJCR4h2Tyael/zOTByRBF+zJwVzq6cpdjoX7fR2qugELkUC43owsSvNiqh13hh7PmXbLPe93IliJxk3ejYXReBu5MbQgbQ33r7KaPt3RaMObbgirN2PHlmNvgiX5P675ofRo4oyrkXt1VCw5uNTGDddqEfRINXEDOg6AzJRne/gOI7EbYzE/17uTnohSIXy+6g5u0nL0ItN089tuCKc158brK1jYVg5IhmZP/b8k90MQoiAjOd60sQuanf5ph0bKEV5yxql0tcOIGRI0praME83Q08uPuEwDkWHbn7LurjlWENreDlbPTYogsyT/m7XwgjR5TC4LoVfq7NfYI/6YO7Uywyco89JhM8tnUt9E2G7KbuLsgsO0aOKM7QhuWsjh5WoUVWR+f2cOuiIvezg3og2Lmt9sNoBY8tMHJb/43AORg5ohjWeTXywK6zOtpE5zbhNxqSWEjkbBgHefm+LIr7HQwmRetB5HIoHRov+jDvUzFyRHHcB4ALKO3UR6ujz3EDalEzufsOauu70Kc8HOy6N9BwZ3vyK2IL+FrWUzFyRBTPuWRf9tWFGIwcESmNkSMipTFyRKQ0Ro6IlMbIEZHSGDkiUhjwG5OytAea8sBBAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NTypeInto>
+                                      <uix:NSelectItem DisplayName="項目を選択 '種別*'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[CurrentRow.ByField(&quot;種別&quot;)]">
+                                        <uix:NSelectItem.Items>
+                                          <scg:List x:TypeArguments="x:String" Capacity="4">
+                                            <x:String></x:String>
+                                            <x:String>立替</x:String>
+                                            <x:String>仮払</x:String>
+                                            <x:String>その他</x:String>
+                                          </scg:List>
+                                        </uix:NSelectItem.Items>
+                                        <uix:NSelectItem.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/d9b7ec0fe0f34a9eae088f30dbc32ce7/new" DesignTimeRectangle="375, 484, 882, 51" ElementType="DropDown" FriendlyName="'立替仮払その他'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' aaname='種別*' /&gt;" Guid="08918fa5-e8c9-44fd-97e5-7ac368802859" ImageBase64="" InformativeScreenshot="41dbc370ba48cd4f6c94938941ffc1af.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="44, 484, 309, 38" ElementType="Text" FriendlyName="'種別*'" FullSelectorArgument="&lt;webctrl aaname='種別*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='種別*' tag='LABEL' type='' check:text='種別*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAqCAYAAADI1CxwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPCSURBVHhe7dy/axtnHMfx/k+eNAgEBW+a4slgqDYRyIGhohDTxQSCB2MyCA9GgaAOVQ1GHoIDJYVACkYdigqFmzwYbggICgcZBIJP73TP/dCdfsVYau7p+wVfcPTcXbY3z0knfSMAsBiRA2A1IgfAakQOgNWIHACrETkAViNyAKxG5ABYjcgBsBqRA2A1IgfAakQOgNWIHACrETkAViNyAKxG5ABYjcgBZTb2NLw8lnMx1Ni8NPXZl/9POJ7c24EG73pqn5+odbCv3cO+Ruaw/wMiB5TJZCz/3p1G6+T7PdV2drQznaY6F0fm71VTV+dvc70/z+as5+dMQ3N4aqT+M7P+qrgaG107K4/ZNCIHlMadegdxeOKpqHHa1/BTsPxXW5WZtXhq2nt6pLPzrvofBnLvfY0n0RW/JHJJsJ6FO8FFkRvr46mjzh9mr2iuX3/tRv++v9Hx857u4v9/C4gcUBpBQF4GwTpo6eTHhgmQo34YuDmSKM3diRlJ5IrXyZ+/TuTGQWjr03Mq2n9xI+82ur5z5Wr4ppnsPJ2327thJnJAGRXiNNSZCchaMw3VvOukHhK50Oi2rUbVrBWmptalK5+dHICiTFjyE0cr47/YySV8V/0X+zO3z7WnHQ0W7Do3icgBpbE8csMkSqsmE7QkcsuGyAHYsnSX1VTfy71mdnX5ndjcXdsGIje67aj5bXxuNJVqxfy9p+NrblcBLOXr/fM0IHtBZMJn5NKorZplt6bFtdg6kZv94KEv97coouEHD+5lK/ngoXllyrwFRA4oG/+9jkwsoqkEEfHkzUQoG64lOzljeSCj49eJ3FqPkBx25bKTA7CI/65l4pOZ6rG6rx8eOe+qadbmzZdEbtborTlnyTGbRuSAUvHU+87ExQSo+6Gn9nVmJ7dyipEbnJq1ajsKYigXxYdE7mtA5IASGQfhid7ziqcYrFhhJ7eQq07dXO/lx/Q7sEQOwFZNPBOWhno/5289M9FZY5zr9Km6bDhPfk+/5p/cahI5AFsxffasoVZwa7rs/bXYWju5SbCLe2JiVe/MfCCQvk8373wiB2CTHiNywc7w5oeaOaaio199sxBIdo3BHPR0Z15OTO7UjX8sgMgBeHSL3i9bexz99Esr+UZC9KzdSDeH+eOCtfjxj9CnvpzceuNye8+8PQSRA8roESIXnuddtdQMIha/Ezc8j7+ZEEx1V87FQKPsM22TQeaHACraDX826bNZ+0oROQBWI3IArEbkAFiNyAGwGpEDYDUiB8BqRA6A1YgcAItJ/wLXOaxZUyNQVAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NSelectItem.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NSelectItem>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="文字を入力 '金額*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[CurrentRow.ByField(&quot;金額&quot;)]">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/d9b7ec0fe0f34a9eae088f30dbc32ce7/new" DesignTimeRectangle="375, 557, 882, 51" ElementType="InputBox" FriendlyName="'INPUT  ledger_cost'" FullSelectorArgument="&lt;webctrl id='ledger_cost' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ledger_cost' tag='INPUT' type='text' aaname='金額*' /&gt;" Guid="305db67f-79b8-43bf-be42-e070ac3e341c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA3YAAAA3CAYAAABAQdjZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK4SURBVHhe7dzBTupQGIXR+/7PJlNG6MQBEKIiKhBUzs1uaFMSnUr/ZK1kDwrtA3w5hX8NAACA0oQdAABAcT+G3Wq1avP5vM1ms3Z3d2dmZmZmZmY3XNosjZZW+8lV2B2Px+7mxWLRPfD09NSen5/by8uLmZmZmZmZ3WBpsrTZer3uWi3NlnYbuwq73PD4+Ng9vNvt2vv7e/v4+Oi23+/NzMzMzMzsj5ceS5ul0dJqaba029gQdjmhS/29vr62w+HQTqdT+/r66vb9/W1mZmZmZmY3WrosjZbQS7P1b1n2hrBL8W02m+5ILw+ez+fLNwAAANxaGi2Bl2ZLu41P7Yawy4/xcryXGwEAAJimNFvaLQ3XG8Iu/7SS8nNSBwAAMF1ptrRbGq53FXZ5Z1PYAQAATFeaLe32a9h9fn5ergAAAJiqtJuwAwAAKEzYAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADFCTsAAIDihB0AAEBxwg4AAKA4YQcAAFCcsAMAAChO2AEAABQn7AAAAIoTdgAAAMUJOwAAgOKEHQAAQHHCDgAAoDhhBwAAUJywAwAAKE7YAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADF/Rp2s9msnU6nyxUAAABTlXZLw/WGsJvP52273bbz+Xz5BAAAgKlJs6Xd0nC9IexWq1W7v78XdgAAABOWZku7peF6Q9hFim+5XF6uAAAAmJo02/i0Lq7C7ng8djc8PDy0t7c3p3cAAAATkDbb7XZdq6XZ0m5jV2HXy5Febs6P8fJPK2ZmZmZmZna7pc3SaOPXL8d+DDsAAADqEHYAAACltfYfwSQtRkq+UrAAAAAASUVORK5CYII=" InformativeScreenshot="fa7c42291c5bdb5303e972399cb77af2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="44, 557, 309, 38" ElementType="Text" FriendlyName="'金額*'" FullSelectorArgument="&lt;webctrl aaname='金額*' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='金額*' tag='LABEL' type='' check:text='金額*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAqCAYAAADI1CxwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQ5SURBVHhe7dzPhyNpAMbx/Z/qlEMITZhDTulLh6FjLzFMkUMMG3spw8rSyhxiD6OW1afStMphpFm9DFkie4hammpGliWHISxFH4rm2arUWz9SXcmkZqZ7Uq/nw0tXpSp9+3rf+pHvQEQkMUaOiKTGyBGR1Bg5IpIaI0dEUmPkiEhqjBwRSY2RIyKpMXJEJDVGjoikxsgRkdQYOSKSGiNHRFJj5IhIaowcEUmNkSMiqTFyRCQ1Ro5IFncTDKoKFMUfDR2zO7F/T/Ybce4bW+yRAyNHJIP7JaxuJYyUGJWuheW9+HwP2yIX798x9Lk4OGM1UsNjvmE4GTmisvMDN35Vi4NzfNJCRfy9M3QfLajiuO1Dh14och4mZyqMv1bh5lxff9741Qm3/x1D+8HEokB8vxQjR1Rmrg3j+2QGF0bN82dfx6l9flTylq57Ri6Zg3mY/Rz+r4Y/M/PE3jTv7yEa6/MqaL0eYzkNI6deOrB/66Amvld9JyL4BBg5opLyPpjoHaWC1PSDFMUsM7tTmgNMPorPIiJy6qUF/aiO1nMN1/ExK1gvg3P97xSzsW1DHW0GazUdoh1dG3wwauhdOHA5kyOire5XmL1NZkXr4Qdu5orPI9nQVVvQRg8D4/7ej5e3G6PqRy/4zoKRW3MdWK+TZXMwai8MzLKhfQKMHFGJrKYGOunZ22eMyokGc76EF8TOszFs5h+nPPeXucE/jSOnwoojZUMXxzFyRPR1ZIIURGNyocXbu0bnFwvGi/TyNVjabl67a5zN/PAtYJ6G23G8Ci9XH4a4Uo2uGx7nziYfEyNHVCLefIh2V8f4Jrs2DSSzK+WlhZz5FVZzE4PTNoxb/+93ajjTamrQ1o+fVNA6EdFrGnCiEBWYyW3eeLDg/BGeG9x4cC568RK7c7kUZzw+Ro5IGp+O3IY7B0a3j/HSgzsd4jg6V6ljME3dOy20XN3jEZLueRLQJ8DIEZVM/IDtZ444St4Ki/fn6J8my9h4WXnUxuDCht+/wsvVtGC2uD6ODwMT0b6+TuSSZ97W46gD4/0C7r0LZzRAO76mVsPgp+i6X4EbDweEkSMqIfefa5hnfbSDR0fileWW5ap7De1ZG/0zE+MPqWt5c3+J+ix1MyI7qnXUX/nfU2i5engYOaIyujHEBX4FvasoXPmRc696IlIVDP7MvKewaykafccXLFcPASNHVErL+FEP5dT0twJ5kds87sE7o3HAUq9vRfsYOSL6lpIZWgPGTbAnJ3LxjC9nFhfYZyb33wKTtyrq1eBB4mHq+brgMRET9vruxOFi5IjK5BOzqn1H/KshOyNn4PzH/NfC3FsL2kly46K25YX9Q8DIEZXJo0Uuf7m6vDXQbvagj2ysskvd4E7slQ41ePm/4A90PiVGjoikxsgRkdQYOSKSGiNHRFJj5IhIaowcEUmNkSMiiQH/A3gnkrxj6oGUAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NTypeInto>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="文字を入力 '備考'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[CurrentRow.ByField(&quot;備考&quot;)]">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/d9b7ec0fe0f34a9eae088f30dbc32ce7/new" DesignTimeRectangle="375, 631, 882, 51" ElementType="InputBox" FriendlyName="'INPUT  ledger_remarks'" FullSelectorArgument="&lt;webctrl id='ledger_remarks' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ledger_remarks' tag='INPUT' type='text' aaname='備考' /&gt;" Guid="d538d8b1-baab-41cd-8429-c21451b2393f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA3YAAAA3CAYAAABAQdjZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAK4SURBVHhe7dzBTupQGIXR+/7PJlNG6MQBEKIiKhBUzs1uaFMSnUr/ZK1kDwrtA3w5hX8NAACA0oQdAABAcT+G3Wq1avP5vM1ms3Z3d2dmZmZmZmY3XNosjZZW+8lV2B2Px+7mxWLRPfD09NSen5/by8uLmZmZmZmZ3WBpsrTZer3uWi3NlnYbuwq73PD4+Ng9vNvt2vv7e/v4+Oi23+/NzMzMzMzsj5ceS5ul0dJqaba029gQdjmhS/29vr62w+HQTqdT+/r66vb9/W1mZmZmZmY3WrosjZbQS7P1b1n2hrBL8W02m+5ILw+ez+fLNwAAANxaGi2Bl2ZLu41P7Yawy4/xcryXGwEAAJimNFvaLQ3XG8Iu/7SS8nNSBwAAMF1ptrRbGq53FXZ5Z1PYAQAATFeaLe32a9h9fn5ergAAAJiqtJuwAwAAKEzYAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADFCTsAAIDihB0AAEBxwg4AAKA4YQcAAFCcsAMAAChO2AEAABQn7AAAAIoTdgAAAMUJOwAAgOKEHQAAQHHCDgAAoDhhBwAAUJywAwAAKE7YAQAAFCfsAAAAihN2AAAAxQk7AACA4oQdAABAccIOAACgOGEHAABQnLADAAAoTtgBAAAUJ+wAAACKE3YAAADF/Rp2s9msnU6nyxUAAABTlXZLw/WGsJvP52273bbz+Xz5BAAAgKlJs6Xd0nC9IexWq1W7v78XdgAAABOWZku7peF6Q9hFim+5XF6uAAAAmJo02/i0Lq7C7ng8djc8PDy0t7c3p3cAAAATkDbb7XZdq6XZ0m5jV2HXy5Febs6P8fJPK2ZmZmZmZna7pc3SaOPXL8d+DDsAAADqEHYAAACltfYfwSQtRkq+UrAAAAAASUVORK5CYII=" InformativeScreenshot="e2b3b383d716c4d7a7ef61859083a17b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="44, 631, 309, 38" ElementType="Text" FriendlyName="'備考'" FullSelectorArgument="&lt;webctrl aaname='備考' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='備考' tag='LABEL' type='' check:text='備考' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAqCAYAAADI1CxwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANrSURBVHhe7dyxaxpRAMfx/k+ZHAJOgQ6ZdKkQiFNdIhQaCgkd2qXcUI4M0smhhEKPLJfJLBYKKYgdxEIhhWIg4BAQAm5C4dc772nO5GK0iUd59/3AA32nXqYv73xnnggALEbkAFiNyAGwGpEDYDUiB8BqRA6A1YgcAKsROQBWI3IArEbkAFiNyAGwGpEDYDUiB8BqRA6A1YgcAKsROQBWI3JApgzUeJFXcaui/U9dDc2sOq7W1taC4aprpgbH1Whuxw/etYiB/J3wM5Z5z+oROSBTuqqtT0JUVXUctiXGwSSBSe6P3Oibo/LeodqXZiIFRA7IknNPJROs6ofaAyIXC9pCoyr/96mcSWALNXVH5qNWjMgBGTK9BF0ryTs3k6GlL1eXjdymioVc9Ljg6DTFa1kiB2TGUI1XJjrrQcz+mOlHk3y5OmjVVJ6u4NINXIjIAVlx1dDueFUVjHenGl36y1+ujuPVlZt07B+G2zF/2woROSAjhie707jsfxlKRA6APfrytmOBCTcQppGryn+k3c5Bx5OznY/Osb6hyntf3Yu+zlptNY5qcl6WVNxOb9MhROSALPhZ1+YkcEmR6yy2qktceY366h67qj41Gwv3jpzKRz3z5tUjcoD1hmru3QjQQyM3GqjX8uW+LCqf8Lp8oaTSVkmV165qH2ryTtpqd3oaXA01evQNj/mIHGC7c0/lcXxyyk12Oe+MXHTpOrl9pHocboVefwcXRq53VFbOPA9H7mlF5Wfm+XpwKRqd9b9B5IAMGP6oa/fA1+HkFo+ZyDk6PV9iJXfV1NtCWfsfGzrrh1+u9eRtJb8+eVzfi5cGIgdkRuw+tjByP2pmRRZE58YmxLyV3C3DpvbN8cUGkQOwErORC39HOn685ak3jdz8kRi5aSyD49/N3C2xc2/WdWZm00DkgMyYjVzvcyl6PHNj8D+s5BbSl//cnPuOH++vCpEDMiMeuaaae9HjccjmRe5P++GRu/CuV4rv22YyHUQOyIxY5N45csbRKcu7CA7dFbkDN3YZu6n6r+iT7hdbuc2MnJxWincCB4gckBnxlVxbg1ZdlTeN6B9n3rmS880qLqeNvYb6S9zj1j0w5zIjX9iV+7VvjqaHyAGwGpEDYDUiB8BqRA6A1YgcAKsROQBWI3IArEbkAFhM+gt/MT1yNAC+1gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NTypeInto>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '登録する'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/d9b7ec0fe0f34a9eae088f30dbc32ce7/new" DesignTimeRectangle="375, 704, 122, 50" ElementType="Button" FriendlyName="'登録する'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='登録する' check:text='登録する' /&gt;" Guid="80437ee2-1a22-432c-8645-5db34da3dfb0" ImageBase64="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" InformativeScreenshot="a32edf79b58a5cea879bb10f4ede04e0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="504, 704, 143, 50" ElementType="Text" FriendlyName="'キャンセル'" FullSelectorArgument="&lt;webctrl parentid='new_ledger' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='new_ledger' tag='A' type='' aaname='キャンセル' check:text='キャンセル' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NClick.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NClick>
+                                      <uix:NGetText DisplayName="テキストを取得 'コード:'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                                        <uix:NGetText.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/3e6e63742eec4549af72f842a0444c58/show/455414?notice=Ledger+was+successfully+created." DesignTimeRectangle="337, 410, 1539, 28" FriendlyName="'455414'" FullSelectorArgument="&lt;webctrl idx='1' tag='DD' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DD' /&gt;" Guid="3c8d6f01-daec-4b07-aa5f-e7a919b6f797" ImageBase64="" InformativeScreenshot="0ea2b8c6dab4f794633778d69e24df8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="240, 411, 66, 24" FriendlyName="'コード:'" FullSelectorArgument="&lt;webctrl idx='1' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='STRONG' aaname='コード:' check:text='コード:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAcCAYAAADcO8kVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAF5SURBVFhH7ZYxS8NAFMf9Tpk6CAUhX0CnTikOimBAsBQUF3FxOjpLJqdscUo/gEPIErLVJYOQIRAoBBwChb+XcFFMcpJEsTV5P3hw791xIT/uXbIHohYSI4HESCAxEkiMhP8rJrKgKwqULM4txKL8W/ReTOIZ0DUDq40oNKQixl+Ih3WJhS92+QO+EZO+mLg+ZnBTnryamCoj3DtZ0pxeisHaxozXZ8uEJwnsOV8zt/moOT9upfhJ376YExPBl1YRMjQTYZYtbzG9sRC0ODT9EJPHGEeXDJYXIuWSUodxGSZW7Trog36I2VehHoixyPWHZwRrsbYWH6xYn0WpHfshJnupTYrQs8AuVIyKOr90J1ePcMO6Y7MtMZWj3jHKF2tBWYwo50Q+zLtJVVAk5nOGKKYgcmGcjT/3OmTw38TcYFpJlOuIHQOnGv+vafG9HoSYLpAYCQMWQ3eMhFZiSovbBomRBLXSDrDrl29fITESSIwEEiOBxNQCvAMw10VLemFslwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NGetText.Target>
+                                        <uix:NGetText.Text>
+                                          <OutArgument x:TypeArguments="x:String">[コード]</OutArgument>
+                                        </uix:NGetText.Text>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NGetText>
+                                      <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;番号&quot;)]" DisplayName="セルに書き込み" sap:VirtualizedContainerService.HintSize="434,164.66666666666666" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[コード]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ueab:WriteCellX>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '戻る'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.expense-demo.com/ledgers/3e6e63742eec4549af72f842a0444c58/show/455414?notice=Ledger+was+successfully+created." DesignTimeRectangle="67, 580, 80, 50" ElementType="Text" FriendlyName="'戻る'" FullSelectorArgument="&lt;webctrl aaname='戻る' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='戻る' tag='A' type='' check:text='戻る' /&gt;" Guid="02b552a6-fcf9-4a31-ac08-32f284406133" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAA2CAYAAABZV76QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPjSURBVHhe7ZvRS9tQFIf31xYhL0UCYhH7EAZFcEIZBEFkZejD2ocNjA8OJohDIlqQgvWlPhR0jkohSEAC9bdz0tuaats18Sbodj64YG+qab6cc+5J8b6DoBURqpmxQm9ubnB+fo7T01OcnJzIiAx2wm7Y0ThGhN7f34dvvry8xN3dHR4eHtQRYQA7YTfsiF2xsygjQqeZF54zyOQoQ6F8kK0L8WBn0SAcCmXTHMpCPNhZNEqHQrnYSs2MDztjdwOGQnkFE5IRdSdCNSBCNSNCNSNCNSNCNSNCNSNCNSNCNSNCNZOB0Gs4yznkci8dRTi/1J98xbzxCK3DHit/ypi34Xrq11PgjQudkZ6HxucCckYR22cp2iQyEvrStH9BunsNVJZyyK86aKbrMiRbocsO/RSTup1YqHdWQcEw8eF7G4GaS5t/U6hKcWNpA+6tmsuIbIWOTedZRgyhty42lgwUtxrwemouQ7IVul5Xr9MgQOfAhjlH55k3UTSNxxsyZ8BcsFCuHaLVTTf5X43Q+jpfvE2NUAL8Fpw1k8SZKG06cFsdeH5E3L2PTusQ2yV6T86AVWvBV4d0k5HQBjY4cjYb6vVzkgr1LqqwjDysLRedGYKv87OMPEWttRO7ms9ENkJ7btiAF6dcRGyhQQfuJi08yxW4v+OkcQD3I5+rhP0U2qhshF59RYGE2mwrXLX5guKO6MIUoP2thFKtmWzhOe5/hvDzaCYToQGl2dSI6O7BCqXlYR8nrG60um+vUMRyaaE6mX9vY+9iwgnVTX2zQsN0ntiD+nQ8Tyszpe4Biadn7Xpcp919lEhkYV3V0V6A66MNFGh1t3afn/V6p0hCTVRbakIj6Qvt1WHzxdbaaiIKp67Vj8zQIsndNGGY1JDHqG99QTbcJ+nv/SjR/JMettdCdZFu8GIV4z7RS0ldqB+mu4W9rppQBN2manUKqIx8YeGjVbNgGEVUjjozPTJ2dvmmlHE4+s9vw5tpflGh6DVRfU/96ZwF56o/pZt0hfaaqMznkKf+MxQT+Gif71GtoyikGmauTf7CwrtwUF4wYCyUUa23EW0rn+GTOD7PahX1to9gGKke9lc4GsvYXi+G9TV+VxCPdIVSw10t2ThUNbHxKU/pHOeJJYDHDTkvNiR26nM5t1G1MqwFOke4wKlBPWr4lLTl9GWrt6dFukL/Q0SoZkSoZkSoZkSoZkSoZkSoZkSoZkSoZkSoZsYKlW01yZi4rUY2fiVj4sYv2ZqYjIlbExk2HT0oTIddRaOTGREq27v/DjthN+yIXU3d3j1gYJ6LLa9gMh4HO5mWyWOFCskRoVoB/gAuTbANGWJ+kQAAAABJRU5ErkJggg==" InformativeScreenshot="df515a2a5076b6fbcd540fc4f87f49f6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" SearchSteps="FuzzySelector, Image" WaitForReadyArgument="Complete">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="153, 580, 80, 50" ElementType="Text" FriendlyName="'破棄'" FullSelectorArgument="&lt;webctrl aaname='破棄' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='破棄' tag='A' type='' check:text='破棄' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAA2CAYAAABZV76QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARYSURBVHhe7ZvPaxtHFMf7dxVKodBLCsnBhx5610WnXgI5mIAuOplC60sKccC4BBwCguCTINgXEagRNWkbqdiyhVRH8g/JrFdIu87q2/dmf2RWmlXW0njd1vPgA9bM7Fj67Nt5I8F8BhNawwjVHEqhp89/wV/ffYs/vvoCv3/5uUGCnbAbdqSKmFDn77YYXHvwDWr376G+9MCggN2wI3bFzuSICeUBf977WjmJYRp2xc7kiIRyCrN11YWGZNiZ/PhHQsWjbh7za8PO5CyNhPJiq7rA8GnYXRiRUK5gqsGGT8PuwjBCNWCEasYI1YwRqhkjVDNGqGaMUM0YoZr5lwpdw8CmN9IuK/rSUoZDU3hv1xR9N0cmQi/iv2rFw97DydQ1Rmg68jtwaX7vtyfq/ogUQl+3xHtdOJQ3dH6yFbq+B4/mH72Kt5+8ZXvpYlbGNYL5vXoJbUV//dEG7K6Nq+oGjlT9GshUaKvSodk7uCzE232hLVxEbYoMfVHDmJomb0ZEkR5xTv/uLk5/XMEx0X1ZhrW9Q+xi2GzBIdzg3nmHW2rpC5Kh0Jy/lvZ3cTzRl0bo8a89f0z+43X1pRJGH6hZDtfBeBhiww1EOs0abCF3BxcvtzCwgHGzrF1qhkL9D39V/WmqL1WGXpvZRalBGX9F2XwSu0GLk5nQxtZBMLscvsRFhYrMnyouSUJvtvpnJHQZ1nt/bue13yZL9P9OEbRcdGLz+tw9oau7uArmThZKfz9V7wLqhYrYboHWvLBt5t72WmFj8Gzi/y1ABkJz6B1STvR7QupMoUsbGA6pWNQ3Y3OEy4VbWY61h9ytDBXZ6VDW7YgPkig0EHL6jkYNazgNr6cb0j/kd9WBNbHdCrlTQnmz7Yrtif9BVEKFkHA7FSwPbqXgzxG8Hh+W0ODXCuZ5/P/ba6ggSWhQ0UmYPy6H8zqNdKmvWAiKGX0ZKMpzpeFmMzGJ2xcafL+PrY/5TbGWQmzaHbomyFaZZ34BWzimlorFuH2hr7jgTFbaAnr73E/xgbLz55zUN4P8Cs7ftODRjfD2D8RS4b0/gEt3bNzdQ3/1e/V1GslcaDw6GHHBkfaXjR9KGJwJ9XCrFYyEVxvO9pPEHzSOVjdxud/DmDPaasF6yuKkR55E96qB6PYebc9uTuytZaig6O8vuQA1Hq/BYin8BmySEmYly3jH3+P99ssXK6I4HRU30K9SFgaJ7HVruFhflgqXJDRsExlM1/ByYnUwfLOJzuOU2Z+SDIVO03xOFbxfw3meC5GN8dlBJGxyLGeu3aYx9HW0zYXMIllnLQy2ScrD6fFKoRE5tNbLGDR7lLU2RqWHijHzcatC/48YoZoxQjVjhGrGCNWMEaoZI1QzRqhmjFDNGKGaUQo1x2rmR3msxhz8mo/Eg1/maOJ8JB5N5GDT5vBsemYenuUwx7vTwW7YEbuaebw7DE5hHsyLLVcww0fYCbuRH3M5lEJNzB9GqNYA/gG98gOoMBFYVAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NClick.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NClick>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ueab:ExcelForEachRowX.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ueab:ExcelForEachRowX>
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="7bebd967164e0745e40d3123650f792c.jpg" Selector="&lt;html app='msedge.exe' title='UiPath Demo' /&gt;" Title="UiPath Demo" Url="https://www.expense-demo.com/" />
+                        </uix:NApplicationCard.TargetApp>
+                      </uix:NApplicationCard>
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelProcessScopeX>
+    </Sequence>
+  </ueab:SequenceX>
+</Activity>
